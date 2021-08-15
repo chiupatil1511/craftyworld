@@ -16,24 +16,17 @@ from django.contrib import auth
 from django.views.decorators.csrf import csrf_exempt
 from django.http import FileResponse
 
-#rule:
-# // {
-# //   "rules": {
-# //     ".read": "now < 1627842600000",  // 2021-8-2
-# //     ".write": "now < 1627842600000",  // 2021-8-2
-# //   }
-# // }
-# {
+
 role = "con"
 firebaseConfig = {
-    'apiKey': "AIzaSyAHoAW5WGu3ArXRbAQWZNYW8yz_Wrd8lkw",
-    'authDomain': "db-crafty.firebaseapp.com",
-    'databaseURL': "https://db-crafty-default-rtdb.firebaseio.com",
-    'projectId': "db-crafty",
-    'storageBucket': "db-crafty.appspot.com",
-    'messagingSenderId': "68963004171",
-    'appId': "1:68963004171:web:1bf82d5407b0dbe2f1bc0e",
-    'measurementId': "G-C4B4TMPYMS"
+    'apiKey': "your api key",
+    'authDomain': "your authDomain ",
+    'databaseURL': "your databaseURL",
+    'projectId': "your projectId",
+    'storageBucket': "your storageBucket",
+    'messagingSenderId': "your messagingSenderId",
+    'appId': "your appId",
+    'measurementId': "your measurementId"
   }
 firebase1 = pyrebase.initialize_app(firebaseConfig)
 authe = firebase1.auth()
@@ -719,7 +712,7 @@ def razor(request):
         curuser = authe.current_user
         cid = curuser['localId']
         amount1 = int(request.GET.get('e'))* 100
-        client = razorpay.Client(auth=('rzp_test_0KGK9KaxLVwGjU','bqBQqKCMxP4mES6ORkjqqKpP'))
+        client = razorpay.Client(auth=('yor secret key','your id'))
         rep = ('CW'.join(random.choice(string.ascii_uppercase) for i in range(3)) + ''.join(random.choice(string.digits) for i in range(2)))
         orderinfo = client.order.create(dict (amount=amount1, currency="INR", receipt=rep))
         odid = orderinfo['id']
