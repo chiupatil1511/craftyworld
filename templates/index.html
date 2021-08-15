@@ -1,0 +1,445 @@
+{% load static %}
+{% if mess %}
+<script>
+    alert('{{ mess }}');
+</script>
+{% endif %}
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>CRAFTY WORLD</title>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Poppins:wght@200;300;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href=
+		"https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+	<style>
+
+	</style>
+
+
+</head>
+
+<body>
+	<div class="header">
+	<div class="container">
+		<div class="navbar">
+			<div class="logo ">
+				 <nav class="navbar">
+					 <div class="avatar" >
+					  <a href="/myprof/"><img class="avatarimg" style="margin-top:1px;margin-left:8px;" height="35px" width="35px" src="{% static 'images/avatar1.jpg' %}"></a>
+					</div>
+					<a href="/index/"><img src="{% static 'images/logo1.png' %}" width=130px></a>
+					<ul id="MenuItems">
+						<li><a href="/index/">Home</a></li>
+						<li><a href="/products/">Buy</a></li>
+						<li><a href="/aditem/">Sell</a></li>
+						<li><a href="/aboutus/">About</a></li>
+						<li><a href="/contactus/">Contact</a></li>
+						<li><a href="/account/">Account</a></li>
+						<li class="gtrans">
+							<div id="google_translate_element"></div>
+							<script type="text/javascript">
+								function googleTranslateElementInit() {
+									new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+								}
+							</script>
+							<script type="text/javascript"
+								src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+						</li>
+
+					</ul>
+					<a href="/displaycart/"><img src="{% static 'images/cart.png' %}" width="30px" height="30px"></a>
+<!--					<a href=""><img src="{% static 'images/menu.png' %}" class="menu-icon" onclick="menutoggle()"></a>-->
+					 {% if cur %}
+					<div class="logout" >
+					 <a href="/logout/"><img  src="{% static 'images/log.jpg' %}" height="38px" width="38px" style="border-radius:50%;"></a>
+					</div>
+<!--					<div class="avatar" >-->
+<!--					  <a href="/myprof/"><img class="avatarimg" style="margin-top:1px;margin-left:8px;" height="35px" width="35px" src="{% static 'images/avatar1.png' %}"></a>-->
+<!--					</div>-->
+				  {% endif %}
+
+				</nav>
+
+			</div>
+		</div>
+	<!-- 	<div>
+	       <div class="topnav" id="myTopnav">
+	          <a href="#home" class="active">Home</a>
+	          <a href="#news">Product</a>
+	          <a href="#contact">About</a>
+	          <a href="#about">Contact</a>
+	          <a href="#about">Account</a>
+	          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+	            <i class="fa fa-bars"></i>
+	          </a>
+	          <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+	      </div>
+	    </div> -->
+		<div class="row">
+				<div class="col-2">
+					<h1>Crafty World !<br>Handmade With Love.</h1>
+					<p>Work done by you with unconditional love and pure devotion goes straight <br>in the category of divine and immortal craft. <br>-Seema Brain Openers</p>
+					<a href="" class="btn">Explore now &#8594;</a>
+				</div>
+				<div class="col-2">
+					<img src="{% static 'images/greet4-removebg-preview.png' %}"  width="600px">
+				</div>
+		</div>
+	</div>
+	</div>
+
+
+	<!-- ------------featured categories------------------------------------------------- -->
+
+	<div class="categories">
+		<div class="small-container">
+			<div class="row">
+				<div class="col-3">
+					<img src="{% static 'images/flower.jpg' %}" height="350px" width="200px">
+				</div>
+				<div class="col-3">
+					<img src="{% static 'images/category-2.jpg' %}" height="350px" width="200px">
+				</div>
+				<div class="col-3">
+					<img src="{% static 'images/category-3.jpg' %}" height="350px" width="200px">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ------------featured products------------------------------------------------- -->
+<!--<div class="small-container">-->
+<!--	<h2 class="title">Featured products</h2>-->
+<!--	<div class="row">-->
+<!--		<div class="col-4">-->
+<!--			<a href="/productdetail/"><img src="{% static 'images/gallery-1.jpg' %}" height="300px" width="150px"></a>-->
+<!--			<a href="/productdetail/"><h4>Black Box</h4></a>-->
+<!--			<div class="rating">-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star-o"></i>-->
+<!--			</div>-->
+<!--			<p>$20.00</p>-->
+<!--		</div>-->
+<!--		<div class="col-4">-->
+<!--			<img src="{% static 'images/product-12.jpg' %}"height="300px" width="150px">-->
+<!--			<h4>Heart Frame</h4>-->
+<!--			<div class="rating">-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star-half-o"></i>-->
+<!--			</div>-->
+<!--			<p>$50.00</p>-->
+<!--		</div>-->
+<!--		<div class="col-4">-->
+<!--			<img src="{% static 'images/product-3.jpg' %}"height="300px" width="150px">-->
+<!--			<h4>Wall hanging</h4>-->
+<!--			<div class="rating">-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star-o"></i>-->
+<!--			</div>-->
+<!--			<p>$10.00</p>-->
+<!--		</div>-->
+<!--		<div class="col-4">-->
+<!--			<img src="{% static 'images/product-5.jpg' %}"height="300px" width="150px">-->
+<!--			<h4>Kitkat cake</h4>-->
+<!--			<div class="rating">-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star-half-o"></i>-->
+<!--			</div>-->
+<!--			<p>$50.00</p>-->
+<!--		</div>-->
+<!--	</div>-->
+
+<!--	<h2 class="title">Featured Products</h2>-->
+<!--	<div class="row">-->
+<!--{% for key,d in det.items %}-->
+<!--		<div class="col-4">-->
+<!--			<img src="{{ d.url }}" height="300px" width="150px">-->
+<!--			<h4>{{ d.Product_name }}</h4>-->
+<!--			<div class="rating">-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star-o"></i>-->
+<!--			</div>-->
+<!--			<p>₹{{ d.Price }}</p>-->
+
+<!--		</div>-->
+<!--		{% endfor %}-->
+<!--		<div class="col-4">-->
+<!--			<img src="{% static 'images/product-4.jpg' %}"height="300px" width="150px">-->
+<!--			<h4>Heart Frame</h4>-->
+<!--			<div class="rating">-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star-half-o"></i>-->
+<!--			</div>-->
+<!--			<p>$50.00</p>-->
+<!--		</div>-->
+<!--		<div class="col-4">-->
+<!--			<img src="{% static 'images/product-13.jpg' %}"height="300px" width="150px">-->
+<!--			<h4>Wall hanging</h4>-->
+<!--			<div class="rating">-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star-o"></i>-->
+<!--			</div>-->
+<!--			<p>$10.00</p>-->
+<!--		</div>-->
+<!--		<div class="col-4">-->
+<!--			<img src="{% static 'images/product-11.jpg' %}"height="300px" width="150px">-->
+<!--			<h4>Kitkat cake</h4>-->
+<!--			<div class="rating">-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star-half-o"></i>-->
+<!--			</div>-->
+<!--			<p>$50.00</p>-->
+<!--		</div>-->
+<!--		<div class="col-4">-->
+<!--			<img src="{% static 'images/product-9.jpg' %}"height="300px" width="150px">-->
+<!--			<h4>Glitter Bottle</h4>-->
+<!--			<div class="rating">-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star-o"></i>-->
+<!--			</div>-->
+<!--			<p>$20.00</p>-->
+<!--		</div>-->
+<!--		<div class="col-4">-->
+<!--			<img src="{% static 'images/product-7.jpg' %}"height="300px" width="150px">-->
+<!--			<h4>Heart Frame</h4>-->
+<!--			<div class="rating">-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star-half-o"></i>-->
+<!--			</div>-->
+<!--			<p>$50.00</p>-->
+<!--		</div>-->
+<!--		<div class="col-4">-->
+<!--			<img src="{% static 'images/product-8.jpg' %}"height="300px" width="150px">-->
+<!--			<h4>Wall hanging</h4>-->
+<!--			<div class="rating">-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star-o"></i>-->
+<!--			</div>-->
+<!--			<p>$10.00</p>-->
+<!--		</div>-->
+<!--		<div class="col-4">-->
+<!--			<img src="{% static 'images/product-10.jpg' %}"height="300px" width="150px">-->
+<!--			<h4>Kitkat cake</h4>-->
+<!--			<div class="rating">-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star"></i>-->
+<!--				<i class="fa fa-star-half-o"></i>-->
+<!--			</div>-->
+<!--			<p>$50.00</p>-->
+<!--		</div>-->
+<!--	</div>-->
+<!--</div>-->
+<!-- ------------------------offer----------------------- -->
+<div class="offer">
+	<div class="small-container">
+		<div class="row">
+			<div class="col-2"><img src="{% static 'images/cake.png' %}" class="offer-img" width="300px"></div>
+			<div class="col-2"><p>Exclusively Available on Crafty World</p>
+				<h1>Chocolate Cake</h1>
+				<small>New Year Gift Box Includes: 12 Millet Energy Bars, Hazelnuts Chocolate Protein Balls (Pack of 10 Balls), Coconut Orange Chocolate Protein Balls (Packs of 10 Balls), Cranberry Orange Trail Mix (100g), Papaya Pineapple Trail Mix (100g) curated in 1 beautiful designer gift box.</small><br>
+				<a href="/products/" class="btn">View More &#8594;</a></div>
+
+		</div>
+	</div>
+</div>
+
+<!-- -------------Testimonial---------------------- -->
+<div class="testimonial">
+	<div class="small-container">
+		<div class="row">
+			<div class="col-3">
+				<i class="fa fa-quote-left"></i>
+				<div class="rating">
+					<p>Thanks for the all the time and effort you guys put into your products.
+I must also say that before I purchased your product I was never happy with support forums. </p>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-half-o"></i>
+					<img src="{% static 'images/user-1.png' %}">
+					<h3>Shivani Patil</h3>
+				</div>
+
+		    </div>
+		    <div class="col-3">
+				<i class="fa fa-quote-left"></i>
+				<div class="rating">
+					<p>Thanks for the all the time and effort you guys put into your products.
+I must also say that before I purchased your product I was never happy with support forums. </p>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<img src="{% static 'images/user-2.png' %}">
+					<h3>shubham </h3>
+				</div>
+
+		    </div>
+		    <div class="col-3">
+				<i class="fa fa-quote-left"></i>
+				<div class="rating">
+					<p>Thanks for the all the time and effort you guys put into your products.
+I must also say that before I purchased your product I was never happy with support forums. </p>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-o"></i>
+					<i class="fa fa-star-o"></i>
+					<img src="{% static 'images/user-3.png' %}">
+					<h3>Vaishali Karkera</h3>
+				</div>
+
+		    </div>
+
+		</div>
+	</div>
+
+</div>
+<!-- ---------brands--------------- -->
+<div class="brands">
+	<div class="small-container">
+		<div class="row">
+			<div class="col-5">
+				<img src="{% static 'images/logo-godrej.png' %}">
+	    	</div>
+	    	<div class="col-5">
+				<img src="{% static 'images/logo-oppo.png' %}">
+	    	</div>
+	    	<div class="col-5">
+				<img src="{% static 'images/logo-coca-cola.png' %}">
+	    	</div>
+	    	<div class="col-5">
+				<img src="{% static 'images/logo-paypal.png' %}">
+	    	</div>
+	    	<div class="col-5">
+				<img src="{% static 'images/logo-philips.png' %}">
+	    	</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- ------------footer-------------------------- -->
+
+
+<div class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="footer-col-1">
+				<h3>Download Our App</h3>
+				<p>Download App for Android and ios mobile phone</p>
+				<div class="app-logo">
+					<img src="{% static 'images/play-store.png' %}">
+					<img src="{% static 'images/app-store.png' %}">
+				</div>
+			</div>
+			<div class="footer-col-2">
+				<a href="/index/"><img src="{% static 'images/logo2-removebg-preview1.png' %}" ></a>
+				<p>Our Purpose Is To Sustainably Make The Pleasure Benefits of Crafts Accessible To The Many</p>
+			</div>
+			<div class="footer-col-3">
+				<h3>Useful Links</h3>
+				<ul>
+					<li>Coupons</li>
+					<li>Blog Post</li>
+					<li>Return Policy</li>
+					<li>Join Affiliate</li>
+				</ul>
+			</div>
+			<div class="footer-col-4">
+				<h3>Follow us</h3>
+				<ul>
+					<li>Facebook</li>
+					<li>Twitter</li>
+					<li>Instagram</li>
+					<li>Youtube</li>
+				</ul>
+			</div>
+		</div>
+		<hr>
+		<p class="copyright">Copyright 2021-Shivani Patil</p>
+	</div>
+</div>
+<!-- ------------------js for toggle menu------------------- -->
+
+<!-- <script >
+	var MenuItems=documents.getElementById("MenuItems")
+	MenuItems.style.maxHeight="0px";
+	function menutoggle(){
+		if(MenuItems.style.maxHeight =="0px")
+		{
+			MenuItems.style.maxHeight =="200px"
+		}
+		else{
+			MenuItems.style.maxHeight =="0px"
+		}
+	}
+</script> -->
+<!-- adding js for navbar -->
+<script >
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+
+
+</body>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/8.6.8/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/8.6.8/firebase-analytics.js"></script>
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
+</html>

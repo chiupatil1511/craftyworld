@@ -1,0 +1,1139 @@
+{% load static %}
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>All Products - CRAFTY WORLD</title>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="preconnects" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Poppins:wght@200;300;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href=
+		"https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+
+/*-------------for popup------*/
+/*.show-btn{
+<!--  background: #fff;-->
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: 500;
+  color:#243313;
+  cursor: pointer;
+<!--  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);-->
+}
+.show-btn{
+  position: absolute;
+  top:10%;
+  left: 50%;
+  transform:translate(-50%,-50%);
+}
+input[type="checkbox"]
+{
+  display: none;
+}
+#show:checked ~ .cont{
+  display: block;
+}*/
+
+/*----------------------------*/
+input, button{
+  border:none;
+  outline: none;
+  background: none;
+}
+
+.cont{
+  /*display:none;*/
+  overflow: hidden;
+  position: relative;
+  width: 900px;
+  height: 600px;
+  margin-left:235px;
+<!--  background: #fff;-->
+<!--  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);-->
+}
+.cont .sub-cont .close-btn{
+  position: absolute;
+  right: 20px;
+  top:15px;
+  font-size: 25px;
+  cursor: pointer;
+}
+.close-btn:hover{
+  color: red;
+}
+.form{
+
+  position: relative;
+  width: 640px;
+  height: 100%;
+  /*padding: 50px 30px;*/
+ /* -webkit-transition:-webkit-transform 1.2s ease-in-out;
+  transition: -webkit-transform 1.2s ease-in-out;
+  transition: transform 1.2s ease-in-out;
+  transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;*/
+}
+h2{
+  width: 100%;
+  font-size: 30px;
+  text-align: center;
+}
+
+label{
+  display: block;
+  width: 260px;
+  margin: 25px auto 0;
+  text-align: center;
+}
+
+label span{
+  font-size: 14px;
+  font-weight: 600;
+  color: #505f75;
+  text-transform: uppercase;
+}
+
+input{
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  font-size: 16px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(109, 93, 93, 0.4);
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+}
+
+button{
+  display: block;
+  margin: 0 auto;
+  width: 260px;
+  height: 36px;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.submit{
+  margin-top: 40px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  font-family: 'Nunito', sans-serif;
+background: #ff523b;
+}
+
+.submit:hover{
+  background: -webkit-linear-gradient(left, #ff523b, white,#ff523b);
+}
+
+.forgot-pass{
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0c0101;
+  cursor: pointer;
+}
+
+.forgot-pass:hover{
+  padding-bottom: 10px;
+  color: red;
+}
+/*
+.social-media{
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.social-media ul{
+  list-style: none;
+}
+
+.social-media ul li{
+  display: inline-block;
+  cursor: pointer;
+  margin: 25px 15px;
+}
+
+.social-media img{
+  width: 40px;
+  height: 40px;
+}*/
+
+.sub-cont{
+  overflow: hidden;
+  position: absolute;
+  left: 640px;
+  top: 0;
+  width: 900px;
+  height: 100%;
+  padding-left: 260px;
+  background:radial-gradient(#fff,#FAAEAE);
+  -webkit-transition: -webkit-transform 1.2s ease-in-out;
+  transition: -webkit-transform 1.2s ease-in-out;
+  transition: transform 1.2s ease-in-out;
+}
+
+.cont.s-signup .sub-cont{
+  -webkit-transform:translate3d(-640px, 0, 0);
+          transform:translate3d(-640px, 0, 0);
+}
+
+.img{
+  overflow: hidden;
+  z-index: 2;
+  color:white;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 260px;
+  height: 100%;
+  padding-top: 360px;
+}
+
+.img:before{
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 900px;
+  height: 100%;
+  background-image: url("{% static 'images/flowr.jpg' %}");
+  background-size: cover;
+  transition: -webkit-transform 1.2s ease-in-out;
+  transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
+}
+
+.img:after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+}
+
+.cont.s-signup .img:before{
+  -webkit-transform:translate3d(640px, 0, 0);
+          transform:translate3d(640px, 0, 0);
+}
+
+.img-text{
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 50px;
+  width: 100%;
+  padding: 0 20px;
+  text-align: center;
+  color: #fff;
+  -webkit-transition:-webkit-transform 1.2s ease-in-out;
+  transition: -webkit-transform 1.2s ease-in-out;
+  transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
+}
+
+.img-text h2{
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+
+.img-text p{
+color:white;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.cont.s-signup .img-text.m-up{
+  -webkit-transform:translateX(520px);
+          transform:translateX(520px);
+}
+
+.img-text.m-in{
+  -webkit-transform:translateX(-520px);
+          transform:translateX(-520px);
+}
+
+.cont.s-signup .img-text.m-in{
+  -webkit-transform:translateX(0);
+          transform:translateX(0);
+}
+
+
+.sign-in{
+  padding-top: 30px;
+  -webkit-transition-timing-function:ease-out;
+          transition-timing-function:ease-out;
+}
+
+.cont.s-signup .sign-in{
+  -webkit-transition-timing-function:ease-in-out;
+          transition-timing-function:ease-in-out;
+  -webkit-transition-duration:1.2s;
+          transition-duration:1.2s;
+  -webkit-transform:translate3d(640px, 0, 0);
+          transform:translate3d(640px, 0, 0);
+}
+
+.img-btn{
+  overflow: hidden;
+  z-index: 2;
+  position: relative;
+  width: 100px;
+  height: 36px;
+  margin: 0 auto;
+  background: transparent;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.img-btn:after{
+  content: '';
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #fff;
+  border-radius: 30px;
+}
+
+.img-btn span{
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack:center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  -webkit-transition:-webkit-transform 1.2s;
+  transition: -webkit-transform 1.2s;
+  transition: transform 1.2s;
+  transition: transform 1.2s, -webkit-transform 1.2s;;
+}
+
+.img-btn span.m-in{
+  -webkit-transform:translateY(-72px);
+          transform:translateY(-72px);
+}
+
+.cont.s-signup .img-btn span.m-in{
+  -webkit-transform:translateY(0);
+          transform:translateY(0);
+}
+
+.cont.s-signup .img-btn span.m-up{
+  -webkit-transform:translateY(72px);
+          transform:translateY(72px);
+}
+
+.sign-up{
+  padding-top: 0;
+  -webkit-transform:translate3d(-900px, 0, 0);
+          transform:translate3d(-900px, 0, 0);
+}
+
+.cont.s-signup .sign-up{
+  -webkit-transform:translate3d(0, 0, 0);
+          transform:translate3d(0, 0, 0);
+}
+/*button*/
+
+.btn{
+  display: inline-block;
+  /*background: #ff523b;*/
+  background: -webkit-linear-gradient(left, #76A63F, #243313);
+  color:#fff;
+  padding:8px 30px;
+  margin: 30px 0;
+  border-radius: 30px;
+  transition: background 0.5s;
+
+}
+.btn:hover{
+  background: #563434;
+
+}
+
+    /*<!---------------------------for first form---------------------------->*/
+    .account-page {
+<!--      margin-top: 10px;-->
+      padding: 0 10px;
+
+    }
+
+    .form-container {
+      margin-bottom: 100px;
+
+      margin-left:10px;
+      /* background: #fff; */
+      width: 390px;
+      height: 460px;
+<!--      background-color: rgb(238, 237, 237);-->
+      color: rgb(0, 0, 0);
+      position: relative;
+      text-align: center;
+      /*padding: 20px 0;*/
+      /*margin: auto;*/
+      border: 3px solid teal;
+<!--      box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);-->
+      overflow: hidden;
+      border-radius: 50px;
+    }
+
+    .form-container span {
+      font-weight: bold;
+      padding-top: 14px;
+      padding-bottom: 0px;
+      padding-right:10px;
+      padding-left:10px;
+      color: rgb(0, 0, 0);
+      cursor: pointer;
+      width: 100px;
+      display: inline-block;
+    }
+
+    .form-btn {
+      display: inline-block;
+    }
+
+    .form-container form {
+      max-width: 300px;
+      padding: 0 20px;
+
+      position: absolute;
+      top:75px;
+      transition: transform 1s;
+    }
+
+    form input {
+      width: 100%;
+      height: 30px;
+      margin: 5px 0;
+      padding: 3px 0px;
+      border: 1px solid rgb(34, 34, 34);
+    }
+
+    form .btn {
+      width: 100%;
+      border: none;
+      cursor: pointer;
+      margin: 10px 0;
+    }
+
+    form .btn:focus {
+      outline: none;
+
+    }
+
+    #LoginForm {
+      margin-top: 20px;
+      left: -240px;
+    }
+
+    #RegForm {
+      left: 70px;
+    }
+
+    form a {
+      font-size: 12px;
+      color: red;
+    }
+
+    #Indicator {
+      width: 100px;
+      border: none;
+      background: #ff523b;
+<!--      background: -webkit-linear-gradient(left, rgb(0, 138, 138), rgb(0, 0, 0));-->
+      height: 3px;
+      margin-top: 8px;
+      transform: translateX(100px);
+      transition: transform 1s;
+    }
+
+    /*------------snc form--------*/
+    .account-page1 {
+      margin-top: 25px;
+      padding: 0 10px;
+
+    }
+
+    .container1 h2 {
+      text-align: center;
+      margin-top: -14px;
+    }
+
+    .form-container1 {
+      margin-bottom: 100px;
+      background: white;
+      width: 390px;
+      height: 505px;
+      position: relative;
+      margin-left: 0px;
+      text-align: center;
+      /*padding: 20px 0;*/
+      /*margin: auto;*/
+      border: 3px solid teal;
+      box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      border-radius: 50px;
+    }
+
+    .form-container1 span {
+      font-weight: bold;
+      padding-top:14px;
+      padding-bottom: 0 ;
+      padding-left: 10px;
+      padding-right: 10px;
+
+      color: #555;
+      cursor: pointer;
+      width: 100px;
+      display: inline-block;
+    }
+
+    .form-btn1 {
+      display: inline-block;
+    }
+
+    .form-container1 form {
+      max-width: 300px;
+      padding: 0 20px;
+      position: absolute;
+      top: 75px;
+      transition: transform 1s;
+    }
+
+    form input {
+      width: 100%;
+      height: 30px;
+      margin: 7px 0;
+      padding: 0 10px;
+<!--      border: 2px solid #ccc;-->
+      border-radius:10%;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+    }
+
+    form .btn1 {
+      width: 100%;
+      border: none;
+      cursor: pointer;
+      margin: 10px 0;
+    }
+
+    form .btn1:focus {
+      outline: none;
+
+    }
+
+    #LoginForm1 {
+      left: -400px;
+    }
+
+    .forget{
+    color: red;
+    }
+
+    #RegForm1 {
+      left: 50px;
+    }
+
+    form a {
+      font-size: 12px;
+<!--      color: red;-->
+    }
+
+    #Indicator1 {
+      width: 100px;
+      margin-left:20px;
+      border: none;
+      /*background: #ff523b;*/
+      background: -webkit-linear-gradient(left, #ff523b, #ff523b);
+      height: 3px;
+      margin-top: 8px;
+      transform: translateX(100px);
+      transition: transform 1s;
+    }
+
+     .label {
+         display: block;
+         width: 260px;
+         margin: 25px auto 0;
+         text-align: center;
+      }
+
+      .labelspan {
+         font-size: 14px;
+         font-weight: 600;
+         color: #505f75;
+         text-transform: uppercase;
+      }
+      #inputid2[type="checkbox"] {
+         display: none;
+      }
+
+      #inputid2 {
+         border: none;
+         outline: none;
+         background: none;
+      }
+      #inputid2 {
+         display: block;
+         width: 100%;
+         margin-top: 5px;
+         font-size: 16px;
+         padding-bottom: 5px;
+         border-bottom: 1px solid rgba(109, 93, 93, 0.4);
+         text-align: center;
+         font-family: 'Nunito', sans-serif;
+      }
+
+
+
+	*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	font-family: 'Akaya Telivigala', cursive;
+    font-family: 'Poppins', sans-serif;
+}
+.navbar{
+	display: flex;
+	align-items:center;
+	padding: 20px;
+
+}
+.navbar img{
+	/*width:130px;*/
+	margin-right: 20px;
+
+}
+nav{
+	flex:1;
+	text-align: right;
+
+}
+nav ul{
+	display: inline-block;
+	list-style-type: none;
+	/*margin-left: auto;*/
+
+}
+nav ul li{
+	display:  inline-block;
+	margin-right: 40px;
+
+
+}
+
+a{
+	text-decoration: none;
+	color:#555;
+	/*text-align: right;*/
+}
+p{
+	color: #555;
+}
+.container{
+	max-width: 1300px;
+	margin: auto;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+<!-- ------------footer-------------------------- -->*/
+.footer{
+	background: #000;
+	color: #8a8a8a;
+	font-size: 14px;
+	padding: 60px 0 20px;
+}
+.footer p{
+	color:#8a8a8a;
+}
+.footer h3{
+	color:#fff;
+	margin-bottom: 20px;
+}
+.footer-col-1,.footer-col-2,.footer-col-3,.footer-col-4
+{
+	min-width: 250px;
+	margin-bottom: 20px;
+}
+.footer-col-1{
+	flex-basis: 30%;
+}
+.footer-col-2{
+	flex: 1;
+	text-align: center;;
+}
+.footer-col-2 img{
+	width: 180px;
+	margin-bottom: 20px;
+}
+.footer-col-3,.footer-col-4{
+	flex-basis: 12%;
+	text-align: center;
+}
+/*to remove bullet style*/
+ul{
+	list-style-type: none;
+}
+.app-logo{
+	margin-top: 20px;
+}
+.app-logo img{
+	width: 140px;
+}
+.footer hr{
+	width: none;
+	background: #b5b5b5;
+	height: 1px;
+	margin: 20px 0;
+}
+.copyright{
+	text-align: center;
+
+}
+/*menu icon*/
+.menu-icon{
+	width: 28px;
+	display: none;
+	margin-left: 20px;
+}
+/*----------media query for menu----------------*/
+@media only screen and (max-width: 800px){
+	nav ul{
+		position: absolute;
+		top: 70px;
+		left: 0;
+		background: #333;
+		width: 100%;
+		overflow: hidden;
+		transition: max-height 0.5s;
+	}
+	nav ul li{
+		display: block;
+		margin-right: 50px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+
+	}
+	nav ul li a{
+		color : #fff;
+
+	}
+	.menu-icon{
+		display: block;
+		cursor: pointer;
+	}
+
+}
+.row{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.col-2{
+	flex-basis: 50%;
+	min-width:300px;
+}
+.col-2 img{
+	max-width: 100%;
+	padding:50px 0;
+}
+.col-2 h1{
+	font-size: 50px;
+	line-height: 60px;
+	margin: 25px 0;
+}
+.btn{
+	display: inline-block;
+	background: #ff523b;
+	color:#fff;
+	padding:8px 30px;
+	margin: 30px 0;
+	border-radius: 30px;
+	transition: background 0.5s;
+}
+.btn:hover{
+	background: #563434;
+
+}
+<!--.header{-->
+<!--	background:radial-gradient(#fff,#FAAEAE);-->
+<!--}-->
+.header row{
+	margin-top: 70px;
+
+}
+.categories{
+	margin: 70px 0;
+}
+.col-3{
+	flex-basis: 30%;
+	min-width: 250px;
+	margin-bottom: 30px;
+}
+.col-3 img{
+	width: 100%;
+}
+.small-container{
+	max-width: 1080px;
+	margin:auto;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+.col-4{
+	flex-basis: 25%;
+	padding: 10px;
+	min-width: 200px;
+	margin-bottom: 50px;
+	transition: transform 0.5s;
+}
+.col-4 img{
+	width:100%;
+}
+.title{
+	text-align:center;
+	margin:0 auto 80px;
+	position:relative;
+	line-height: 60px;
+	color:#555;
+}
+.title::after{
+
+	content:'';
+	background: #ff523b;
+	width:80px;
+	height:5px;
+	border-radius: 5px;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+h4{
+	color: #555;
+	font-weight: normal;
+}
+.col-4{
+	font-size: 14px;
+
+}
+.rating .fa{
+	color: #ff523b;
+
+}
+.col-4:hover{
+	transform: translateY(-5px);
+}
+
+
+
+</style>
+</head>
+
+<body>
+<div class="container">
+		<div class="navbar">
+			<div class="logo ">
+				 <nav class="navbar">
+					<a href="/index/"><img src="{% static 'images/logo1.png' %}" width="130px"></a>
+					<ul id="MenuItems">
+						<li><a href="/index/">Home</a></li>
+						<li><a href="/products/">Buy</a></li>
+						<li><a href="/aditem/">Sell</a></li>
+						<li><a href="/aboutus/">About</a></li>
+						<li><a href="/contactus/">Contact</a></li>
+						<li><a href="/account/">Account</a></li>
+						<li class="gtrans">
+							<div id="google_translate_element"></div>
+							<script type="text/javascript">
+								function googleTranslateElementInit() {
+									new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+								}
+							</script>
+							<script type="text/javascript"
+								src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+						</li>
+
+					</ul>
+					<a href="/displaycart/"><img src="{% static 'images/cart.png' %}" width="30px" height="30px"></a>
+					<a href=""><img src="{% static 'images/menu.png" class="menu-icon" onclick="menutoggle()"></a>
+
+
+				</nav>
+			</div>
+		</div>
+	</div>
+
+<!---------------------------account page----------------------------->
+ <div class="cont">
+<div class="form">
+ <!-- <span class="close">x</span> -->
+<div class="account-page">
+  <h2>Consumer ?</h2>
+  <div class="containerr">
+    <div class="row">
+      <!-- <div class="col-2">
+        <img src="images/greet4-removebg-preview.png" width=100%>
+      </div> -->
+      <div class="col-2">
+        <div class="form-container">
+          <div class="form-btn">
+            <span onclick ="login()">Login</span>
+            <span onclick ="register()">Sign Up</span>
+            <hr id="Indicator">
+          </div>
+         <form id="LoginForm" class="mainform" method="post" action="/Clogin/">
+                        {% csrf_token %}
+                        <input type="email" placeholder="Email" name="email">
+                        <input type="password" placeholder="Password" name="pass">
+
+
+                        <input type="submit" class="submit" value="Login">
+                        <a href="" class="forget">Forget password</a>
+                      </form>
+
+                      <form id="RegForm" method="post" action="/Csignup/">
+                        {% csrf_token %}
+                        <input type="text" placeholder="Name" name="name">
+                        <input type="email" placeholder="Email id" name="email">
+                        <input type="tel"  pattern="[0-9]{10}" maxlength="10"  placeholder="Mobile no." name="contact">
+                        <input type="text" placeholder="Address" name="address">
+                        <input type="text" placeholder="City" name="city">
+                        <input type="tel" pattern="[0-9]{6}" maxlength="6" placeholder="Pin Code" name="pin">
+                        <input type="password" placeholder="Password" name="pass">
+                        <input type="submit" class="submit" value="Register">
+
+                      </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+    <div class="sub-cont">
+       <!-- <span class="close1">x</span> -->
+      <div class="img">
+        <div class="img-text m-up">
+          <h2>Seller ?</h2>
+          <p>Sell your product to get maximum profit !</p>
+        </div>
+        <div class="img-text m-in">
+          <h2>Are You Consumer ?</h2>
+          <p>Sign up and get handmade with love!</p>
+        </div>
+        <div class="img-btn">
+          <span class="m-up">Click me</span>
+          <span class="m-in">Click me</span>
+        </div>
+      </div>
+
+<!---------------------------account page2----------------------------->
+
+
+<div class="account-page1">
+    <h2>Seller ?</h2>
+  <div class="container1">
+    <div class="row">
+      <div class="col-2">
+        <div class="form-container1">
+          <div class="form-btn1">
+            <span onclick ="loginn()">Login</span>
+            <span onclick ="registerr()">Sign Up</span>
+            <hr id="Indicator1">
+          </div>
+          <form id="LoginForm1" method="post" action="/selsignin/">
+                        {% csrf_token %}
+                        <input type="text" placeholder="Email id" name="email">
+                        <input type="password" placeholder="password" name="pass">
+<!--                        <label class="label">-->
+<!--                        <span class="labelspan">Role</span>-->
+<!--                        <select id='inputid2' name="RoleName">-->
+<!--                            <option value=""></option>-->
+<!--                            <option value="sell">Seller</option>-->
+<!--                            <option value="con">Consumer</option>-->
+<!--                        </select>-->
+<!--                        </label>-->
+
+<!--              <input type="submit" value="Login" class="submit">-->
+
+                        <input type="submit" value="Login" class="submit" name="mainlogin">
+                        <!-- <button type="submit" class="btn">Login</button> -->
+                        <a href="">Forget password</a>
+                      </form>
+
+                      <form id="RegForm1" method="post" action="/selsignup/">
+                        {% csrf_token %}
+                        <input type="text" placeholder="Name" name="name">
+                        <input type="email" placeholder="Email id" name="email">
+                        <input type="tel"  pattern="[0-9]{10}" maxlength="10"  placeholder="Mobile no." name="contact">
+                        <input type="tel" placeholder="Adhar no." pattern="[0-9]{12}" maxlength="12" name="adhar">
+                        <input type="text" placeholder="Address" name="address">
+                        <input type="text" placeholder="City" name="city">
+                        <input type="tel" pattern="[0-9]{6}" maxlength="6" placeholder="Pin Code" name="pin">
+                        <input type="password" placeholder="Password" name="pass">
+                        <input type="submit" class="submit" value="Register">
+                      </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+
+<br>
+
+
+  <!---------- javascript-------------------- -->
+<script >
+  document.querySelector('.img-btn').addEventListener('click', function()
+  {
+    document.querySelector('.cont').classList.toggle('s-signup')
+  }
+);
+</script>
+<!-- --------------------js for toggle form------------------------------- -->
+
+        <script type="text/javascript">
+
+          var LoginForm = document.getElementById("LoginForm");
+          var RegForm = document.getElementById("RegForm");
+          var Indicator = document.getElementById("Indicator");
+          function register() {
+
+            RegForm.style.transform = "translateX(0px)";
+            LoginForm.style.transform = "translateX(0px)";
+            Indicator.style.transform = "translateX(100px)";
+          }
+          function login() {
+
+            RegForm.style.transform = "translateX(350px)";
+            LoginForm.style.transform = "translateX(450px)";
+            Indicator.style.transform = "translateX(0px)";
+          }
+        </script>
+
+        <script type="text/javascript">
+
+          var LoginForm1 = document.getElementById("LoginForm1");
+          var RegForm1 = document.getElementById("RegForm1");
+          var Indicator1 = document.getElementById("Indicator1");
+          function registerr() {
+
+            RegForm1.style.transform = "translateX(0px)";
+            LoginForm1.style.transform = "translateX(0px)";
+            Indicator1.style.transform = "translateX(100px)";
+          }
+          function loginn() {
+
+            RegForm1.style.transform = "translateX(350px)";
+            LoginForm1.style.transform = "translateX(450px)";
+            Indicator1.style.transform = "translateX(0px)";
+          }
+        </script>
+
+<!-- ------------footer-------------------------- -->
+
+
+<div class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="footer-col-1">
+				<h3>Download Our App</h3>
+				<p>Download App for Android and ios mobile phone</p>
+				<div class="app-logo">
+					<img src="{% static 'images/play-store.png' %}">
+					<img src="{% static 'images/app-store.png' %}">
+				</div>
+			</div>
+			<div class="footer-col-2">
+				<a href="/index/"><img src="{% static 'images/logo2-removebg-preview1.png' %}" ></a>
+				<p>Our Purpose Is To Sustainably Make The Pleasure Benefits of Crafts Accessible To The Many</p>
+			</div>
+			<div class="footer-col-3">
+				<h3>Useful Links</h3>
+				<ul>
+					<li>Coupons</li>
+					<li>Blog Post</li>
+					<li>Return Policy</li>
+					<li>Join Affiliate</li>
+				</ul>
+			</div>
+			<div class="footer-col-4">
+				<h3>Follow us</h3>
+				<ul>
+					<li>Facebook</li>
+					<li>Twitter</li>
+					<li>Instagram</li>
+					<li>Youtube</li>
+				</ul>
+			</div>
+		</div>
+		<hr>
+		<p class="copyright">Copyright 2021-Shivani Patil</p>
+	</div>
+</div>
+<!-- ------------------js for toggle menu------------------- -->
+
+<script >
+	var MenuItems=documents.getElementById("MenuItems")
+	MenuItems.style.maxHeight="0px";
+	function menutoggle(){
+		if(MenuItems.style.maxHeight =="0px")
+		{
+			MenuItems.style.maxHeight =="200px"
+		}
+		else{
+			MenuItems.style.maxHeight =="0px"
+		}
+	}
+</script>
+
+
+
+<!-- --------------------js for toggle form------------------------------- -->
+
+<script type="text/javascript">
+
+	var LoginForm=document.getElementById("LoginForm");
+	var  RegForm=document.getElementById("RegForm");
+	var Indicator=document.getElementById("Indicator");
+	function register(){
+
+		RegForm.style.transform="translateX(0px)";
+		LoginForm.style.transform="translateX(0px)";
+		Indicator.style.transform="translateX(100px)";
+	}
+	function login(){
+
+		RegForm.style.transform="translateX(300px)";
+		LoginForm.style.transform="translateX(300px)";
+		Indicator.style.transform="translateX(0px)";
+	}
+</script>
+</body>
+</html>

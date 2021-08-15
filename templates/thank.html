@@ -1,0 +1,66 @@
+{% load static %}
+<html>
+    <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>All Products - CRAFTY WORLD</title>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="preconnects" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Poppins:wght@200;300;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href=
+		"https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+    .done font{
+        margin-left: 124px;
+    }
+
+    .done {
+        margin-top: 150px;
+        /* padding: 100px 100px; */
+        background-color: grey;
+        border: 2px solid black;
+        border-radius: 10px;
+        width: 600px;
+        margin-left: 420px;
+        padding-top: 15px;
+    }
+
+    .done img{
+        /* margin-top: 230px; */
+        margin-left: 172px;
+    }
+    .done h3{
+        /* margin-top: 230px; */
+        margin-left: 220px;
+    }
+
+    .main button{
+		margin-left: 670px;
+		margin-top:20px;
+		height: 50px;
+		width: 100px;
+		color: white;
+		font-weight: bold;
+		border-radius: 10px;
+		}
+
+    </style>
+    </head>
+<body>
+    <div class="done">
+    <font size="7"> Order Confrimed </font>
+
+
+
+            <br><br>
+    <img src="{% static 'images/confrim.png' %}" height="200px" width="250px"><br><br>
+    <h3>Thanks for Shopping!!</h3>
+        </div>
+    <div class="main">
+    <a href="/index/"> <button style="background-color: #ff523b;"> Home Page</button> </a>
+    </div>
+
+</body>
+</html>

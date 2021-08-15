@@ -1,0 +1,420 @@
+{% load static %}
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+<!--	addda-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Buying</title>
+
+
+    <link rel="icon" href="{% static 'images/mainlogo.png' %}" type="image/x-icon">
+
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/demo.css' %} ">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/common.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style2.css' %}">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,700' rel='stylesheet' type='text/css' />
+	<script type="text/javascript" src="{% static 'js/modernizr.custom.79639.js' %}"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+		integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+		crossorigin="anonymous" />
+
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>All Products - CRAFTY WORLD</title>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Poppins:wght@200;300;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<style>
+<!--	*{-->
+<!--	margin: 0;-->
+<!--	padding: 0;-->
+<!--	box-sizing: border-box;-->
+<!--}-->
+	body{
+	background-image: url("{% static 'images/yellowbg.png' %}");
+	}
+<!--        body,-->
+<!--        html {-->
+
+<!--width: 100%;-->
+<!--height: 100%;-->
+<!--padding: 0px;-->
+<!--margin: 0px;-->
+<!-- background-image: url("{% static 'images/yellowbg.jpg' %}");-->
+<!--overflow-x: hidden;-->
+<!--        }-->
+	.ch-img-1 {
+		background-image: url({% static 'images/blackbox1.jpg' %});
+	}
+
+	.ch-img-2 {
+		background-image: url({% static 'images/bottle1.jpg'%});
+	}
+
+	.ch-img-3 {
+		background-image: url({% static 'images/heart.jpg' %});
+	}
+
+	.ch-img-4 {
+		background-image: url({% static 'images/wallhang22.jpg' %});
+	}
+
+	.ch-img-5 {
+		background-image: url({% static 'images/kitkat1.jpg' %});
+	}
+
+	.ch-img-6 {
+		background-image: url({% static 'images/clock1.jpg' %});
+	}
+
+	.ch-img-7 {
+		background-image: url({% static 'images/tes1.jpg' %});
+	}
+
+	.ch-img-8 {
+		background-image: url({% static 'images/lasun.jpg' %});
+	}
+<!--	all abve image width=220;-->
+
+<!--	.ch-img-9 {-->
+<!--		background-image: url("{% static 'images/rice2.jpg' %}");-->
+<!--	}-->
+
+<!--	.ch-img-10 {-->
+<!--		background-image: url({% static 'images/wheat.jpg' %});-->
+<!--	}-->
+
+	.filter-sections {
+	width: 100%;
+	display: block;
+	overflow: hidden;
+	margin-left: 60px;
+	}
+
+	.filter-sections img{
+	width: 70%;
+	display: block;
+	overflow: hidden;
+	margin-top: -40px;
+	margin-left: 30px;
+	margin-bottom: -58px;
+	}
+
+	.filter-sections h5{
+
+<!--	margin-top: px;-->
+<!--    margin-top:200px;-->
+	margin-left: 13px;
+	}
+	.filter-sections h6{
+
+	margin-top: 1px;
+<!--    margin-top:200px;-->
+	margin-left: 13px;
+	}
+
+	.filter-sections p{
+	font-size: 16px;
+	margin-top: -38px;
+	}
+
+	.filter-sections div {
+	opacity: 0;
+	display: none;
+	min-height: 50px;
+	margin: 0.5em;
+	text-align: center;
+<!--	padding: 5px 5px;-->
+	float: left;
+	/* transition: all 500s ease; */
+	}
+
+	.view {
+	display: block !important;
+	opacity: 1 !important;
+	/* transform: scale(1) rotate(0deg); */
+	border-radius:4px;
+	/* animation: selected 300ms 1 ease-in-out; */
+	}
+
+	.res{
+		color: grey;
+		font-size: 35px;
+		position: absolute;
+		top: 840px;
+	}
+	.image{
+position: relative;
+top:0px;
+left: 500px;
+}
+
+   .filter-sections {
+width: 100%;
+display: block;
+overflow: hidden;
+margin-left: 60px;
+}
+
+.filter-sections div {
+opacity: 0;
+display: none;
+min-height: 50px;
+margin: 0.5em;
+text-align: center;
+padding: 2em 1em;
+float: left;
+/* transition: all 500s ease; */
+}
+
+.view {
+display: block !important;
+opacity: 1 !important;
+/* transform: scale(1) rotate(0deg); */
+border-radius:4px;
+/* animation: selected 300ms 1 ease-in-out; */
+}
+
+.product{
+height: 310px;
+width: 250px;
+background-color:rgba(245, 245, 245, 0.753);
+padding: 2px 2px;
+color:rgb(0, 0, 0);
+box-shadow: 4px;
+font-size: 30px;
+border-radius:10px;
+/* box-shadow: rgb(0, 0, 0); */
+box-shadow: 3px 2px rgba(0, 0, 0,0.3);
+}
+   .getmain{
+margin-bottom: 5px;
+   background-color:#ff523b;
+   height: 47px;
+   width: 100px;
+   font-size: 18px;
+   border-radius: 10px;
+color: white;
+}
+
+
+</style>
+
+</head>
+<body>
+	<div class="container">
+		<div class="navbar">
+			<div class="logo ">
+				 <nav class="navbar">
+					<a href="/index/"><img src="{% static 'images/logo1.png' %}" width="130px"></a>
+					<ul id="MenuItems">
+						<li><a href="/index/">Home</a></li>
+						<li><a href="/products/">Buy</a></li>
+						<li><a href="/aditem/">Sell</a></li>
+						<li><a href="/aboutus/">About</a></li>
+						<li><a href="/contactus/">Contact</a></li>
+						<li><a href="/account/">Account</a></li>
+						<li class="gtrans">
+							<div id="google_translate_element"></div>
+							<script type="text/javascript">
+								function googleTranslateElementInit() {
+									new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+								}
+							</script>
+							<script type="text/javascript"
+								src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+						</li>
+
+					</ul>
+					<a href="/displaycart/"><img src="{% static 'images/cart.png' %}" width="30px" height="30px"></a>
+<!--					<a href=""><img src="{% static 'images/menu.png' %}" class="menu-icon" onclick="menutoggle()"></a>-->
+				</nav>
+			</div>
+		</div>
+	</div>
+
+<div class="small-container">
+	<div class="row row-2">
+		<h2>All Products</h2>
+		<select>
+			<option>Default Shorting</option>
+			<option>Sort by Price</option>
+			<option>Sort by popularity</option>
+			<option>Sort by rating</option>
+			<option>Sort by sale</option>
+		</select>
+
+	</div>
+<!--	added-->
+
+	</div>
+<!--   <div class="gif"><img src="{% static 'images/gif.gif' %}" height="180px" width="220px">-->
+<!--   </div>-->
+   <div class="container">
+      <section class="main">
+
+         <ul class="ch-grid">
+            <li><a href="/blackbox/">
+               <div class="ch-item ch-img-1">
+                  <div class="ch-info"><br>
+
+                     <h3>Blackbox</h3>
+
+                  </div>
+               </div></a>
+            </li>
+            <li><a href="/glitterbottle/">
+               <div class="ch-item ch-img-2">
+                  <div class="ch-info"><br>
+
+                     <h3>Glitter Bottle</h3>
+                  </div>
+               </div></a>
+            </li>
+            <li><a href="/heartframe/">
+               <div class="ch-item ch-img-3">
+                  <div class="ch-info"><br>
+
+                     <h3>Heart Frame</h3>
+                  </div>
+               </div></a>
+            </li>
+            <li><a href="/wallhanging/">
+               <div class="ch-item ch-img-4">
+                  <div class="ch-info"><br>
+
+                     <h3>Wall-hanging</h3>
+                  </div>
+               </div></a>
+            </li>
+            <li><a href="/kitkatcake/">
+               <div class="ch-item ch-img-5">
+                  <div class="ch-info"><br>
+
+                     <h3>Kitkat Cake</h3>
+                  </div>
+               </div></a>
+            </li>
+            <li><a href="/clock/">
+               <div class="ch-item ch-img-6">
+                  <div class="ch-info"><br>
+
+                     <h3>Clock</h3>
+                  </div>
+               </div></a>
+            </li>
+            <li><a href="/teddy/">
+               <div class="ch-item ch-img-7">
+                  <div class="ch-info"><br>
+
+                     <h3>Teddy</h3>
+                  </div>
+               </div></a>
+            </li>
+            <li><a href="/photoframe/">
+               <div class="ch-item ch-img-8">
+                  <div class="ch-info"><br>
+
+                     <h3>Photo Frame</h3>
+                  </div>
+               </div></a>
+            </li>
+         </ul>
+      </section>
+   </div>
+   <img src="{% static 'images/Untitled design.png' %}">
+   <div class="res"><b>Result🔽</b></div>
+<!--jnkjnoi-->
+
+      <div class="filter-sections" id="result">
+   {% for key,d in det.items|slice:":2" %}
+       <div class="product">
+           <img src= "{{ d.url }}" width="150px" height="130px" style="border-radius:10px;"><br>
+           <h5>{{ d.Product_name }}</h5>
+		    <h6>₹{{ d.Price }}</h6>
+<!--           <p><i class="material-icons" style="color:teal">location_on</i> {{ d.city }}</p>-->
+               <a href="/mainpro/?z={{key}}"><button class="getmain"> Details</button></a>
+       </div>
+
+   {% endfor %}
+	</div>
+	<script>
+		var items = document.querySelectorAll('.filter-sections div');
+        animate(items);
+
+        // forech arrays
+        function each(el, callback) {
+            var allDivs = document.querySelectorAll(el),
+                alltoArr = Array.prototype.slice.call(allDivs);
+            Array.prototype.forEach.call(alltoArr, function (selector, index) {
+                if (callback) return callback(selector);
+            });
+        };
+        // animate function
+        function animate(item) {
+            (function show(counter) {
+                setTimeout(function () {
+                    item[counter].classList.add('view');
+                    counter++;
+                    if (counter < item.length) show(counter);
+                }, 50);
+            })(0);
+        };
+	</script>
+<!-- ------------footer-------------------------- -->
+
+
+<div class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="footer-col-1">
+				<h3>Download Our App</h3>
+				<p>Download App for Android and ios mobile phone</p>
+				<div class="app-logo">
+					<img src="{% static 'images/play-store.png' %}">
+					<img src="{% static 'images/app-store.png' %}">
+				</div>
+			</div>
+			<div class="footer-col-2">
+				<a href="/index/"><img src="{% static 'images/logo2-removebg-preview1.png' %}" ></a>
+				<p>Our Purpose Is To Sustainably Make The Pleasure Benefits of Crafts Accessible To The Many</p>
+			</div>
+			<div class="footer-col-3">
+				<h3>Useful Links</h3>
+				<ul>
+					<li>Coupons</li>
+					<li>Blog Post</li>
+					<li>Return Policy</li>
+					<li>Join Affiliate</li>
+				</ul>
+			</div>
+			<div class="footer-col-4">
+				<h3>Follow us</h3>
+				<ul>
+					<li>Facebook</li>
+					<li>Twitter</li>
+					<li>Instagram</li>
+					<li>Youtube</li>
+				</ul>
+			</div>
+		</div>
+		<hr>
+		<p class="copyright">Copyright 2021-Shivani Patil</p>
+	</div>
+</div>
+<!--</div>-->
+
+
+</body>
+</html>
+
+
+
+
+
+

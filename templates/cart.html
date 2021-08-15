@@ -1,0 +1,434 @@
+{% load static %}
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>All Products - CRAFTY WORLD</title>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Poppins:wght@200;300;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href=
+		"https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  .cart-page {
+            margin: 0px 0px;
+            background-color: #e2e2e2dc;
+
+        }
+
+        table {
+            width: 130%;
+            margin-top:-260px;
+            border-collapse: collapse;
+        }
+        .address h1 {
+            background-color: grey;
+<!--            margin-left: 20px ;-->
+            margin-top: 20px;
+            color: #fff;
+            font-weight: normal;
+            text-align: center;
+            padding-top: 10px;
+            border-radius: 10px;
+        }
+
+        .address {
+            background-color: grey;
+            width: 400px;
+            height: auto;
+            margin-left: 0px;
+            margin-top: 0px;
+            border-radius: 10px;
+            padding-bottom: 20px;
+        }
+         .info {
+            width: 330px;
+            height: auto;
+            background-color: #fff;
+            color: black;
+            margin-left: 40px;
+            padding: 40px 20px;
+            border-radius: 10px;
+
+        }
+
+        .input {
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+
+        .input:focus {
+            outline: none;
+        }
+
+        .cart-info {
+            display: flex;
+            flex-wrap: wrap;
+        }
+         th {
+            text-align: left;
+            padding: 5px;
+            color: #fff;
+            background:  grey;
+            font-weight: normal;
+        }
+
+        td {
+            padding: 10px 5px;
+        }
+
+        td input {
+            width: 40px;
+            height: 30px;
+            padding: 5px;
+        }
+
+        td a {
+            color: teal;
+            font-size: 12px;
+        }
+
+        td img {
+            width: 80px;
+            height: 80px;
+            margin-right: 10px;
+        }
+        .total-price {
+            display: flex;
+            justify-content: flex-end;
+            margin-left: 10px;
+        }
+
+        .table1 {
+        margin-top:20px;
+            border-top: 3px solid  #7f948e;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        td:last-child {
+            text-align: right;
+        }
+
+        th:last-child {
+            text-align: right;
+        }
+         .form-container {
+            background: #fff;
+            width: 300px;
+            height: 400px;
+            position: relative;
+            text-align: center;
+            padding: 20px 0;
+            margin: auto;
+            box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.8);
+            overflow: hidden;
+        }
+
+        .form-container span {
+            font-weight: bold;
+            padding: 0 10px;
+            color: #555;
+            cursor: pointer;
+            width: 100px;
+            display: inline-block;
+        }
+
+        .form-btn {
+            display: inline-block;
+        }
+
+        .form-container form {
+            max-width: 300px;
+            padding: 0 20px;
+            position: absolute;
+            top: 130px;
+            transition: transform 1s;
+        }
+
+        form input {
+            width: 100%;
+            height: 30px;
+            margin: 10px 0;
+            padding: 0 10px;
+            border: 1px solid #ff523b;
+        }
+
+        form .btn {
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+
+        form .btn:focus {
+            outline: none;
+
+        }
+         #LoginForm {
+            left: -300px;
+        }
+
+        #RegForm {
+            left: 0;
+        }
+
+        form a {
+            font-size: 12px;
+        }
+
+        #Indicator {
+            width: 100px;
+            border: none;
+            background: #ff523b;
+            height: 3px;
+            margin-top: 8px;
+            transform: translateX(100px);
+            transition: transform 1s;
+        }
+
+        #cartimg {
+
+            margin-top: 20px;
+        }
+
+        .contact3-form-btn {
+            font-family: Poppins-Medium;
+            font-size: 16px;
+            color: rgb(0, 0, 0);
+            margin-left: 0px;
+            margin-top: 20px;
+            line-height: 1.2;
+            text-transform: uppercase;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 50px;
+            min-width: 80px;
+            height: 45px;
+            border-radius: 8px;
+            position: relative;
+            z-index: 1;
+            -webkit-transition: all 0.4s;
+            -o-transition: all 0.4s;
+            -moz-transition: all 0.4s;
+            transition: all 0.4s;
+            background-color: #ff523b;
+        }
+
+        .contact3-form-btn::before {
+            content: "";
+            display: block;
+            position: absolute;
+            z-index: -1;
+            border-radius: 8px;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: #ff523b;
+            opacity: 1;
+            -webkit-transition: all 0.4s;
+            -o-transition: all 0.4s;
+            -moz-transition: all 0.4s;
+            transition: all 0.4s;
+        }
+
+        .contact3-form-btn:hover {
+            color: rgb(182, 228, 255);
+<!--           background: -webkit-linear-gradient(left, #76A63F, #243313);-->
+        }
+
+
+</style>
+
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="navbar">
+			<div class="logo ">
+				<nav class="navbar">
+					<a href="/index/"><img src="{% static 'images/logo1.png' %}" width="130px"></a>
+					<ul id="MenuItems">
+						<li><a href="/index/">Home</a></li>
+						<li><a href="/products/">Buy</a></li>
+						<li><a href="/aditem/">Sell</a></li>
+						<li><a href="/aboutus/">About</a></li>
+						<li><a href="/contactus/">Contact</a></li>
+						<li><a href="/account/">Account</a></li>
+						<li class="gtrans">
+							<div id="google_translate_element"></div>
+							<script type="text/javascript">
+								function googleTranslateElementInit() {
+									new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+								}
+							</script>
+							<script type="text/javascript"
+								src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+						</li>
+
+					</ul>
+					<a href="/displaycart/"><img src="{% static 'images/cart.png' %}" width="30px" height="30px"></a>
+					<a href=""><img src="images/menu.png" class="menu-icon" onclick="menutoggle()"></a>
+
+				</nav>
+			</div>
+		</div>
+	</div>
+  <!-- --------------------cart items details-------------------- -->
+        <div class="row">
+    <div class="column left"><center>
+        <div class="small-container" class="cart-page">
+            <table>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity(in Kg)</th>
+                    <th>Subtotal</th>
+                </tr>
+                {% for key, d in det.items %}
+                <tr>
+                    <td>
+                        <div class="cart-info">
+                            <img src="{{d.url}}">
+                            <!--					<img src="images/onion.jpg">-->
+                            <div>
+                                <p>{{ d.Productname }}</p>
+                                <small>Price:₹ {{ d.Price }}.00</small>
+                                <br>
+                                <a href="/removefromcart/?z={{key}}">Remove</a>
+                            </div>
+                        </div>
+                    </td>
+                    <!--			<td><input type="number" value="{{ d.Requiredquantity }}"  min="1" max={{d.maxquant}}></td>-->
+                    <td><form action="/displaycart/?proid={{key}}" method="post">
+                            {% csrf_token%}
+                            <input type="submit" value="-" name ="minus" style="height: 30px; width: 30px; border-radius: 50%; border: none;">
+
+                            &nbsp;
+                            <input type="number" value="{{ d.Requiredquantity }}" min="1" max={{d.maxquant}} >
+                            &nbsp;
+                            <input type="submit" value="+" name="plus" style="height: 30px;border: none; width: 30px; border-radius: 50%;">
+
+                        </form>
+                    </td>
+                    <td>₹{{ d.totalprice }}.00</td>
+                </tr>
+                {% endfor %}
+            </table>
+            </div>
+    </center>
+    </div>
+
+    <div class="column right" >
+        <div class="address">
+            <h1>Address</h1>
+            <br>
+            <div class="info">
+                <input type="radio" name="addr" value="oldadd" class="radioadd">
+                {{ add }}, City: {{ city }},<br> Pin Code: {{ pin }}
+            </div>
+            <br>
+            <div class="info">
+                <input type="radio" name="addr" value="newadd" class="radioadd">
+                <input type="text" class="input" placeholder="Add new address for this delivery">
+            </div>
+        </div>
+        <br>
+
+        <div class="total-price">
+            <table class="table1">
+                <!--            <tr><td>Order summary</td></tr>-->
+                <tr>
+                    <td>Subtotal</td>
+                    <td>₹ {{ sum }}.00</td>
+                </tr>
+                <tr>
+                    <td>Tax</td>
+                    <td>₹ 20.00</td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td>₹ {{ sum1 }}.00</td>
+                </tr>
+            </table>
+            <br><br><br>
+         </div>
+
+<form method="post" action="/razor/?e={{ sum1 }}">
+    {% csrf_token %}
+    <input type="submit" value="Order  Now " class="contact3-form-btn">
+</form>
+
+
+
+    </div>
+    </div>
+
+
+<!--footer-->
+
+<br><br>
+<div class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="footer-col-1">
+				<h3>Download Our App</h3>
+				<p>Download App for Android and ios mobile phone</p>
+				<div class="app-logo">
+					<img src="{% static 'images/play-store.png' %}">
+					<img src="{% static 'images/app-store.png' %}">
+				</div>
+			</div>
+			<div class="footer-col-2">
+				<a href="/index/"><img src="{% static 'images/logo2-removebg-preview1.png' %}"></a>
+				<p>Our Purpose Is To Sustainably Make The Pleasure Benefits of Crafts Accessible To The Many</p>
+			</div>
+			<div class="footer-col-3">
+				<h3>Useful Links</h3>
+				<ul>
+					<li>Coupons</li>
+					<li>Blog Post</li>
+					<li>Return Policy</li>
+					<li>Join Affiliate</li>
+				</ul>
+			</div>
+			<div class="footer-col-4">
+				<h3>Follow us</h3>
+				<ul>
+					<li>Facebook</li>
+					<li>Twitter</li>
+					<li>Instagram</li>
+					<li>Youtube</li>
+				</ul>
+			</div>
+		</div>
+		<hr>
+		<p class="copyright">Copyright 2021-Shivani Patil</p>
+	</div>
+</div>
+<!-- ------------------js for toggle menu------------------- -->
+
+<script >
+	var MenuItems=documents.getElementById("MenuItems")
+	MenuItems.style.maxHeight="0px";
+	function menutoggle(){
+		if(MenuItems.style.maxHeight =="0px")
+		{
+			MenuItems.style.maxHeight =="200px"
+		}
+		else{
+			MenuItems.style.maxHeight =="0px"
+		}
+	}
+</script>
+
+</body>
+</html>
